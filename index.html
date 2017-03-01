@@ -41,7 +41,8 @@
       <!--<a-sky id="image-360" radius="10" src="#honor"></a-sky>-->
       <a-videosphere id="image-360" src="#honor" rotation="0 180 0"></a-videosphere>
 
-      <a-entity id="video-entity" video-controls="src:#honor"></a-entity>
+      <a-entity id="honor-entity" video-controls="src:#honor" visible=true></a-entity>
+      <a-entity id="shark-entity" video-controls="src:#shark" visible=false></a-entity>
 
       <!-- Image links. -->
       <a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4">
@@ -51,12 +52,16 @@
       </a-entity>
       <script>
           document.querySelector('#shark_link').addEventListener('click', function () {
-            var control = document.querySelector("#video-entity");
-            control.setAttribute("video-controls", "src:#shark");    
+            var honor = document.querySelector("honor-entity")
+            honor.setAttribute("visible", false);
+            var shark = document.querySelector("shark-entity");
+            shark.setAttribute("visible", true);    
           });
           document.querySelector('#honor_link').addEventListener('click', function () {
-            var control = document.querySelector("#video-entity");
-            control.setAttribute("video-controls", "src:#honor");    
+               var honor = document.querySelector("honor-entity")
+            honor.setAttribute("visible", true);
+            var shark = document.querySelector("shark-entity");
+            shark.setAttribute("visible", false);      
           });
           document.querySelector('#cango_link').addEventListener('click', function () {
             var control = document.querySelector("#video-entity");
