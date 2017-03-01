@@ -52,15 +52,15 @@
       </a-entity>
       <script>
           document.querySelector('#shark_link').addEventListener('click', function () {
-            var honor = document.querySelector("honor-entity")
+            var honor = document.querySelector("#honor-entity")
             honor.setAttribute("visible", false);
-            var shark = document.querySelector("shark-entity");
+            var shark = document.querySelector("#shark-entity");
             shark.setAttribute("visible", true);    
           });
           document.querySelector('#honor_link').addEventListener('click', function () {
-               var honor = document.querySelector("honor-entity")
+               var honor = document.querySelector("#honor-entity")
             honor.setAttribute("visible", true);
-            var shark = document.querySelector("shark-entity");
+            var shark = document.querySelector("#shark-entity");
             shark.setAttribute("visible", false);      
           });
           document.querySelector('#cango_link').addEventListener('click', function () {
