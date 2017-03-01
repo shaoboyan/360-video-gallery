@@ -26,7 +26,7 @@ AFRAME.registerComponent('set-image', {
       setTimeout(function () {
         // Set image.
         data.target.setAttribute('material', 'src', data.src);
-        data.control.setAttribute('src', data.src);
+        data.control.setAttribute('video-controls', "src:"+ data.src);
       }, data.dur);
     });
   },
