@@ -9,7 +9,6 @@ AFRAME.registerComponent('set-image', {
     on: {type: 'string'},
     target: {type: 'selector'},
     src: {type: 'string'},
-    control : {type: 'selector'},
     dur: {type: 'number', default: 300}
   },
 
@@ -26,7 +25,6 @@ AFRAME.registerComponent('set-image', {
       setTimeout(function () {
         // Set image.
         data.target.setAttribute('material', 'src', data.src);
-        data.control.setAttribute('video-controls', "src:"+ data.src);
       }, data.dur);
     });
   },

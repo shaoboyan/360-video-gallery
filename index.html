@@ -32,7 +32,7 @@
             event-set__2="_event: mouseup; scale: 1.2 1.2 1"
             event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
             event-set__4="_event: mouseleave; scale: 1 1 1"
-            set-image="on: click; target: #image-360; control: #video-entity; src: ${src}"
+            set-image="on: click; target: #image-360; src: ${src}"
             sound="on: click; src: #click-sound"></a-entity>
         </script>
       </a-assets>
@@ -45,10 +45,24 @@
 
       <!-- Image links. -->
       <a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4">
-        <a-entity template="src: #link" data-src="#shark" data-thumb="#cubes-thumb"></a-entity>
-        <a-entity template="src: #link" data-src="#honor" data-thumb="#city-thumb"></a-entity>
-        <a-entity template="src: #link" data-src="#congo" data-thumb="#sechelt-thumb"></a-entity>
+        <a-entity id="shark_link" template="src: #link" data-src="#shark" data-thumb="#cubes-thumb"></a-entity>
+        <a-entity id="honor_link" template="src: #link" data-src="#honor" data-thumb="#city-thumb"></a-entity>
+        <a-entity id="cango_link" template="src: #link" data-src="#congo" data-thumb="#sechelt-thumb"></a-entity>
       </a-entity>
+      <script>
+          document.querySelector('#shark_link').addEventListener('click', function () {
+            var control = document.querySelector("#video-entity");
+            control.setAttribute("video-controls", "src:#shark");    
+          });
+          document.querySelector('#honor_link').addEventListener('click', function () {
+            var control = document.querySelector("#video-entity");
+            control.setAttribute("video-controls", "src:#honor");    
+          });
+          document.querySelector('#cango_link').addEventListener('click', function () {
+            var control = document.querySelector("#video-entity");
+            control.setAttribute("video-controls", "src:#cango");    
+          });
+      </script>
 
       <!-- Camera + cursor. -->
       <a-entity camera look-controls>
